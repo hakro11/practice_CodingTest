@@ -4,7 +4,6 @@ class Solution {
         String strToage = age + "";
 		
 		for(int i = 0 ; i < strToage.length(); i++) {
-			System.out.println(strToage.charAt(i));
 			switch(strToage.charAt(i)) {
 			case '0':
 				answer += 'a';
