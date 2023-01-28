@@ -8,14 +8,9 @@ class Solution {
 		int st = score.length-1;
 		while(true) {
 			if(st - m < -1 ) break;
-			if(score[st] == score[st - m +1 ]) {
-				answer += score[st] * m;
-			}else {
-				answer += score[st - m +1] * m;
-			}
+			answer += score[st - m +1] * m;
 			st -= m;
 		}
-		
-        return answer;
+		return answer;
     }
 }
