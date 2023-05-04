@@ -15,6 +15,8 @@ class Solution {
             answer[idx-1] = callings[i];
 
         }
+        
+        rank.clear();
 
         return answer;
     }
