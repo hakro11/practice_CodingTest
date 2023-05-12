@@ -5,26 +5,6 @@ class Solution {
     static int[][] dir = {{-1, 0}, {1, 0}, {0, -1}, {0, 1}};
 
     public int[] solution(String[] maps) {
-        int cnt = countIslands(maps);
-        if (cnt == 0) return new int[]{-1};
-
-        int[] answer = new int[cnt];
-
-        int idx = 0;
-        visited = new boolean[maps.length][maps[0].length()];
-
-        for (int i = 0; i < maps.length; i++) {
-            for (int j = 0; j < maps[i].length(); j++) {
-                if (maps[i].charAt(j) != 'X' && !visited[i][j]) {
-                    answer[idx++] = bfs(i, j, maps);
-                }
-            }
-        }
-class Solution {
-    static boolean[][] visited;
-    static int[][] dir = {{-1, 0}, {1, 0}, {0, -1}, {0, 1}};
-
-    public int[] solution(String[] maps) {
         List<Integer> list = new ArrayList<>();
         this.visited = new boolean[maps.length][maps[0].length()];
 
