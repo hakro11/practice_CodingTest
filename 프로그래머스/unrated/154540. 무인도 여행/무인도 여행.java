@@ -20,10 +20,28 @@ class Solution {
                 }
             }
         }
+class Solution {
+    static boolean[][] visited;
+    static int[][] dir = {{-1, 0}, {1, 0}, {0, -1}, {0, 1}};
 
-        Arrays.sort(answer);
+    public int[] solution(String[] maps) {
+        List<Integer> list = new ArrayList<>();
+        this.visited = new boolean[maps.length][maps[0].length()];
 
-        return answer;
+        for (int i = 0; i < maps.length; i++) {
+            for (int j = 0; j < maps[i].length(); j++) {
+                if (maps[i].charAt(j) != 'X' && !visited[i][j]) {
+                    list.add(bfs(i, j, maps));
+                }
+            }
+        }
+
+        if (list.size() == 0) {
+            return new int[]{-1};
+        } else {
+            return list.stream().sorted().mapToInt(i -> i).toArray();
+        }
+
     }
 
     private static int bfs(int x, int y, String[] maps) {
@@ -56,19 +74,4 @@ class Solution {
         return sum;
     }
 
-    private static int countIslands(String[] maps) {
-        int cnt = 0;
-        visited = new boolean[maps.length][maps[0].length()];
-
-        for (int i = 0; i < maps.length; i++) {
-            for (int j = 0; j < maps[i].length(); j++) {
-                if (maps[i].charAt(j) != 'X' && !visited[i][j]) {
-                    bfs(i, j, maps);
-                    cnt++;
-                }
-            }
-        }
-
-        return cnt;
-    }
 }
