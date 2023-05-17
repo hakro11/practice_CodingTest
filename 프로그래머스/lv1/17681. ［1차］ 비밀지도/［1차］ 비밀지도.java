@@ -28,7 +28,6 @@ class Solution {
             newMap[i] = binaryString;
         }
 
-
         return newMap;
     }
 
