@@ -3,7 +3,7 @@ import java.util.*;
 class Solution {
     public int solution(String dartResult) {
         String[] bonus = dartResult.split("[0-9]+");
-        String[] point = dartResult.split("[A-Z](\\*|#)*");
+        String[] point = dartResult.split("[D|S|T][\\*|#]*");
         int[] getPoint = new int[point.length];
         
         for (int i = 0; i < getPoint.length; i++) {
@@ -23,16 +23,12 @@ class Solution {
             }
 
             if (bonus[i + 1].length() > 1) {
-                if (i >= 1 && bonus[i + 1].charAt(1) == '*') {
-                    getPoint[i-1] *= 2;
+                if(bonus[i + 1].charAt(1) == '*'){
                     getPoint[i] *= 2;
-                }else if(i == 0 && bonus[i + 1].charAt(1) == '*'){
-                    getPoint[i] *= 2;
-                }
-
-                if(bonus[i+1].charAt(1) == '#'){
-                    getPoint[i] *= -1;
-                }
+                    if(i >= 1){
+                        getPoint[i-1] *= 2;
+                    }
+                }else getPoint[i] *= -1;
             }
         }
 
