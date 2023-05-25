@@ -11,15 +11,8 @@ class Solution {
                 mapOfparticipant.replace(name, mapOfparticipant.get(name), mapOfparticipant.get(name)-1);
             }
         }
-
-        char[] charArr = mapOfparticipant.keySet().toString().toCharArray();
-        String answer = "";
-
-        for(int i = 1; i < charArr.length -1; i++){
-            answer += charArr[i];
-        }
-
-        return answer;
+        
+        return mapOfparticipant.keySet().toArray(new String[0])[0];
     }
 
     public Map<String, Integer> makeMap(String[] participant){
