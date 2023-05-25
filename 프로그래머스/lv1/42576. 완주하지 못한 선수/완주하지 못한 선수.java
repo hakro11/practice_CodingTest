@@ -4,11 +4,11 @@ class Solution {
     public String solution(String[] participant, String[] completion) {
         Map<String, Integer> mapOfparticipant = makeMap(participant);
 
-        for(int i = 0; i < completion.length; i++){
-            if(mapOfparticipant.get(completion[i]) == 0){
-                mapOfparticipant.remove(completion[i]);
-            } else if (mapOfparticipant.get(completion[i]) > 0) {
-                mapOfparticipant.replace(completion[i], mapOfparticipant.get(completion[i]), mapOfparticipant.get(completion[i])-1);
+        for(String name : completion){
+            if(mapOfparticipant.get(name) == 0){
+                mapOfparticipant.remove(name);
+            } else if (mapOfparticipant.get(name) > 0) {
+                mapOfparticipant.replace(name, mapOfparticipant.get(name), mapOfparticipant.get(name)-1);
             }
         }
 
@@ -25,11 +25,11 @@ class Solution {
     public Map<String, Integer> makeMap(String[] participant){
         Map<String, Integer> map = new HashMap<>();
 
-        for (int i = 0; i < participant.length; i++) {
-            if (!map.containsKey(participant[i])) {
-                map.put(participant[i], 0);
+        for (String name : participant) {
+            if (!map.containsKey(name)) {
+                map.put(name, 0);
             }else {
-                map.replace(participant[i], map.get(participant[i]), map.get(participant[i])+1);
+                map.replace(name, map.get(name), map.get(name)+1);
             }
         }
 
