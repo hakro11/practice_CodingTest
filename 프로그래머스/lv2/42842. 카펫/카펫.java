@@ -1,5 +1,3 @@
-import java.util.*;
-
 class Solution {
     public int[] solution(int brown, int yellow) {
         int total = brown + yellow;
@@ -12,8 +10,7 @@ class Solution {
         int stNum = 3;
         int x = 0;
         int y = 0;
-        
-        int i = 0;
+
         while(true){
             if(stNum >= total) break;
             
