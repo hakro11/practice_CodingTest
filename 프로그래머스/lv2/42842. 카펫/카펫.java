@@ -1,12 +1,7 @@
 class Solution {
     public int[] solution(int brown, int yellow) {
         int total = brown + yellow;
-        
-        return locationList(total, brown);
-    }
-    
-    public int[] locationList(int total, int brown){
-        int[] answer = new int[2]; 
+        int[] answer = new int[2];
         int stNum = 3;
         int x = 0;
         int y = 0;
@@ -30,5 +25,4 @@ class Solution {
         
         return answer;
     }
-
 }
