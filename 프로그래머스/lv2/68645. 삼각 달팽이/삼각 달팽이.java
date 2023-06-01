@@ -16,7 +16,7 @@ class Solution {
 
         cycle1(dataMap);
         readValue(dataMap, list);
-        
+
         return list.stream().mapToInt(i -> i).toArray();
     }
 
@@ -36,7 +36,6 @@ class Solution {
                 cnt++;
             }
         }
-        if (cnt == 0) return;
 
         for (int i = totalCycle+1, n = height - totalCycle-1; i < n; i++) {
             if (dataMap[n][i] == 0) {
@@ -44,7 +43,6 @@ class Solution {
                 cnt++;
             }
         }
-        if(cnt==0) return;
 
         int x = height-totalCycle-1, y = height-(2*totalCycle)-1;
         while (true){
